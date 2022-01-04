@@ -1,9 +1,9 @@
 import React from 'react';
-import PropTypes from '../../utils/propTypes';
+import Prop from '../../utils/propTypes';
 
 import { Card, CardImg, CardImgOverlay, CardTitle, CardText } from 'reactstrap';
 
-import Todos, { propTypes as TodosPropTypes } from '../../Components/Todos';
+import Todos from '../../Components/Todos';
 
 import backgroundImage from '../../assets/img/bg/background_1920-2.jpg';
 
@@ -23,10 +23,10 @@ const TodosCard = ({ image, title, subtitle, todos, ...restProps }) => {
 };
 
 TodosCard.propTypes = {
-  image: PropTypes.string,
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  todos: TodosPropTypes.todos,
+  image: Prop.PropTypes.string,
+  title: Prop.PropTypes.string,
+  subtitle: Prop.PropTypes.string,
+  // todos: TodosPropTypes.todos,
 };
 
 TodosCard.defaultProps = {

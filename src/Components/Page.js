@@ -46,15 +46,15 @@ const Page = ({
   );
 };
 
-Page.Prop = {
+Page.propTypes = {
   tag: Prop.component,
-  title: Prop.oneOfType([Prop.string, Prop.element]),
-  className: Prop.string,
-  children: Prop.node,
-  breadcrumbs: Prop.arrayOf(
-    Prop.shape({
-      name: Prop.string,
-      active: Prop.bool,
+  title: Prop.PropTypes.oneOfType([Prop.string, Prop.element]),
+  className: Prop.PropTypes.string,
+  children: Prop.PropTypes.node,
+  breadcrumbs: Prop.PropTypes.arrayOf(
+    Prop.PropTypes.shape({
+      name: Prop.PropTypes.string,
+      active: Prop.PropTypes.bool,
     })
   ),
 };

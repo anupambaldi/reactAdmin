@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from '../../utils/propTypes';
+import Prop from '../../utils/propTypes';
 
 import classNames from 'classnames';
 
@@ -35,12 +35,12 @@ const UserCard = ({
 };
 
 UserCard.propTypes = {
-  avatar: PropTypes.string,
-  avatarSize: PropTypes.number,
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  text: PropTypes.string,
-  className: PropTypes.string,
+  avatar: Prop.PropTypes.string,
+  avatarSize: Prop.PropTypes.number,
+  title: Prop.PropTypes.string,
+  subtitle: Prop.PropTypes.string,
+  text: Prop.PropTypes.string,
+  className: Prop.PropTypes.string,
 };
 
 UserCard.defaultProps = {

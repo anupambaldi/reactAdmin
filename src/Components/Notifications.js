@@ -25,12 +25,12 @@ const Notifications = ({ notificationsData }) => {
   );
 };
 
-Notifications.Prop = {
-  notificationsData: Prop.arrayOf(
-    Prop.shape({
+Notifications.propTypes = {
+  notificationsData: Prop.PropTypes.arrayOf(
+    Prop.PropTypes.shape({
       id: Prop.ID,
-      avatar: Prop.string,
-      message: Prop.node,
+      avatar: Prop.PropTypes.string,
+      message: Prop.PropTypes.node,
       date: Prop.date,
     })
   ),

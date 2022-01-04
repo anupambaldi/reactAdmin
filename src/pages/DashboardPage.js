@@ -1,6 +1,6 @@
 import { AnnouncementCard, TodosCard } from '../Components/Card';
 import HorizontalAvatarList from '../Components/HorizontalAvatarList';
-import MapWithBubbles from '../Components/MapWithBubbles';
+// import MapWithBubbles from '../Components/MapWithBubbles';
 import Page from '../Components/Page';
 import ProductMedia from '../Components/ProductMedia';
 import SupportTicket from '../Components/SupportTicket';
@@ -18,7 +18,7 @@ import {
 import React from 'react';
 import { Bar, Line } from 'react-chartjs-2';
 import {
-  MdBubbleChart,
+  // MdBubbleChart,
   MdInsertChart,
   MdPersonPin,
   MdPieChart,
@@ -146,7 +146,7 @@ class DashboardPage extends React.Component {
                   <Badge color="secondary">$3000</Badge>
                 </ListGroupItem>
                 <ListGroupItem>
-                  <MdBubbleChart size={25} color={primaryColor} /> Management
+                  {/* <MdBubbleChart size={25} color={primaryColor} /> Management */}
                   costs <Badge color="secondary">$1200</Badge>
                 </ListGroupItem>
                 <ListGroupItem>
@@ -341,7 +341,7 @@ class DashboardPage extends React.Component {
                 Map with bubbles
               </CardHeader>
               <CardBody>
-                <MapWithBubbles />
+                {/* <MapWithBubbles /> */}
               </CardBody>
             </Card>
           </Col>

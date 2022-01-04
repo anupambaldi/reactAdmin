@@ -33,11 +33,11 @@ const ProductMedia = ({ image, title, description, right, ...restProps }) => {
   );
 };
 
-ProductMedia.Prop = {
-  image: Prop.string.isRequired,
-  title: Prop.string.isRequired,
-  description: Prop.string,
-  right: Prop.node,
+ProductMedia.propTypes = {
+  image: Prop.PropTypes.string.isRequired,
+  title: Prop.PropTypes.string.isRequired,
+  description: Prop.PropTypes.string,
+  right: Prop.PropTypes.node,
 };
 
 export default ProductMedia;

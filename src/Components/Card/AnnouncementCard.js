@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from '../../utils/propTypes';
+import Prop from '../../utils/propTypes';
 
 import { Card, CardHeader, CardBody, CardText, Button } from 'reactstrap';
 
@@ -44,14 +44,14 @@ const AnnouncementCard = ({
 };
 
 AnnouncementCard.propTypes = {
-  color: PropTypes.string,
-  header: PropTypes.node,
-  avatar: PropTypes.string,
-  avatarSize: PropTypes.number,
-  name: PropTypes.string,
-  date: PropTypes.date,
-  className: PropTypes.string,
-  children: PropTypes.element,
+  color: Prop.PropTypes.string,
+  header: Prop.PropTypes.node,
+  avatar: Prop.PropTypes.string,
+  avatarSize: Prop.PropTypes.number,
+  name: Prop.PropTypes.string,
+  date: Prop.PropTypes.date,
+  className: Prop.PropTypes.string,
+  children: Prop.PropTypes.element,
 };
 
 AnnouncementCard.defaultProps = {

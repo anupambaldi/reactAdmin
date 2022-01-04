@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from '../../utils/propTypes';
+import Prop from '../../utils/propTypes';
 
 import classNames from 'classnames';
 
@@ -31,11 +31,11 @@ const IconWidget = ({
 };
 
 IconWidget.propTypes = {
-  bgColor: PropTypes.string,
-  icon: PropTypes.component,
-  iconProps: PropTypes.object,
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
+  bgColor: Prop.PropTypes.string,
+  icon: Prop.component,
+  iconProps: Prop.PropTypes.object,
+  title: Prop.PropTypes.string,
+  subtitle: Prop.PropTypes.string,
 };
 
 IconWidget.defaultProps = {

@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import PropTypes from '../utils/propTypes';
+import Prop from '../utils/propTypes';
 
 const tagMap = {
   h1: 'h1',
@@ -36,9 +36,9 @@ const Typography = ({ tag: Tag, className, type, ...restProps }) => {
 };
 
 Typography.propTypes = {
-  tag: PropTypes.component,
-  className: PropTypes.string,
-  type: PropTypes.oneOf(types),
+  tag: Prop.component,
+  className: Prop.PropTypes.string,
+  type: Prop.PropTypes.oneOf(types),
 };
 
 Typography.defaultProps = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from '../utils/propTypes';
+import Prop from '../utils/propTypes';
 
 import { Table, Progress } from 'reactstrap';
 
@@ -40,12 +40,12 @@ const UserProgressTable = ({ headers, usersData, ...restProps }) => {
 };
 
 UserProgressTable.propTypes = {
-  headers: PropTypes.node,
-  usersData: PropTypes.arrayOf(
-    PropTypes.shape({
-      avatar: PropTypes.string,
-      name: PropTypes.string,
-      date: PropTypes.date,
+  headers: Prop.PropTypes.node,
+  usersData: Prop.PropTypes.arrayOf(
+    Prop.PropTypes.shape({
+      avatar: Prop.PropTypes.string,
+      name: Prop.PropTypes.string,
+      date: Prop.PropTypes.date,
     })
   ),
 };

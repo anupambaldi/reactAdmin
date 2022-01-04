@@ -10,12 +10,12 @@ import {
   Button,
 } from 'reactstrap';
 
-export const PropType = {
-  todos: PropType.arrayOf(
-    PropType.shape({
-      id: PropType.ID,
-      title: PropType.string,
-      done: PropType.bool,
+const PropType = {
+  todos: Prop.PropTypes.arrayOf(
+    Prop.PropTypes.shape({
+      id: Prop.ID,
+      title: Prop.PropTypes.string,
+      done: Prop.PropTypes.bool,
     })
   ),
 };

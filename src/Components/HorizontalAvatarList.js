@@ -49,16 +49,16 @@ const HorizontalAvatarList = ({
   );
 };
 
-HorizontalAvatarList.Prop = {
-  tag: Prop.node,
-  avatars: Prop.arrayOf(
-    Prop.shape({
-      avatar: Prop.string.isRequired,
-      name: Prop.string,
+HorizontalAvatarList.propTypes = {
+  tag: Prop.PropTypes.node,
+  avatars: Prop.PropTypes.arrayOf(
+    Prop.PropTypes.shape({
+      avatar: Prop.PropTypes.string.isRequired,
+      name: Prop.PropTypes.string,
     })
   ).isRequired,
-  avatarProps: Prop.object,
-  reversed: Prop.bool,
+  avatarProps: Prop.PropTypes.object,
+  reversed: Prop.PropTypes.bool,
 };
 
 HorizontalAvatarList.defaultProps = {

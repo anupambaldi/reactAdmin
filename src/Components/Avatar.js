@@ -26,13 +26,13 @@ const Avatar = ({
   );
 };
 
-Avatar.Prop = {
+Avatar.propTypes = {
   tag: Prop.component,
-  rounded: Prop.bool,
-  circle: Prop.bool,
-  size: Prop.oneOfType([Prop.string, Prop.number]),
-  src: Prop.string,
-  style: Prop.object,
+  rounded: Prop.PropTypes.bool,
+  circle: Prop.PropTypes.bool,
+  size: Prop.PropTypes.oneOfType([Prop.string, Prop.number]),
+  src: Prop.PropTypes.string,
+  style: Prop.PropTypes.object,
 };
 
 Avatar.defaultProps = {

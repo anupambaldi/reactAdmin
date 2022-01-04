@@ -50,13 +50,13 @@ const SupportTicket = ({
   );
 };
 
-SupportTicket.Prop = {
-  avatar: Prop.string,
-  name: Prop.string,
-  date: Prop.date,
-  text: Prop.string,
-  status: Prop.oneOf(['open', 'closed', 'pending']),
-  onClick: Prop.func,
+SupportTicket.propTypes = {
+  avatar: Prop.PropTypes.string,
+  name: Prop.PropTypes.string,
+  date: Prop.PropTypes.date,
+  text: Prop.PropTypes.string,
+  status: Prop.PropTypes.oneOf(['open', 'closed', 'pending']),
+  onClick: Prop.PropTypes.func,
 };
 
 SupportTicket.defualtProps = {

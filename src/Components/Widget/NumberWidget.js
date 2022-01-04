@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from '../../utils/propTypes';
+import Prop from '../../utils/propTypes';
 
 import { Card, CardText, CardTitle, Progress } from 'reactstrap';
 import Typography from '../Typography';
@@ -37,13 +37,13 @@ const NumberWidget = ({
 };
 
 NumberWidget.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string,
-  number: PropTypes.oneOfType([
-    PropTypes.string.isRequired,
-    PropTypes.number.isRequired,
+  title: Prop.PropTypes.string.isRequired,
+  subtitle: Prop.PropTypes.string,
+  number: Prop.PropTypes.oneOfType([
+    Prop.PropTypes.string.isRequired,
+    Prop.PropTypes.number.isRequired,
   ]),
-  color: PropTypes.oneOf([
+  color: Prop.PropTypes.oneOf([
     'primary',
     'secondary',
     'success',
@@ -53,9 +53,9 @@ NumberWidget.propTypes = {
     'light',
     'dark',
   ]),
-  progress: PropTypes.shape({
-    value: PropTypes.number,
-    label: PropTypes.string,
+  progress: Prop.PropTypes.shape({
+    value: Prop.PropTypes.number,
+    label: Prop.PropTypes.string,
   }),
 };
 
