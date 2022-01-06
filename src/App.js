@@ -13,6 +13,7 @@ const AuthModalPage = React.lazy(() => import('./pages/AuthModalPage'));
 const BadgePage = React.lazy(() => import('./pages/BadgePage'));
 const ButtonGroupPage = React.lazy(() => import('./pages/ButtonGroupPage'));
 const ButtonPage = React.lazy(() => import('./pages/ButtonPage'));
+const UserPage = React.lazy(() => import('./pages/UserPage'));
 const CardPage = React.lazy(() => import('./pages/CardPage'));
 const ChartPage = React.lazy(() => import('./pages/ChartPage'));
 const DashboardPage = React.lazy(() => import('./pages/DashboardPage'));
@@ -37,7 +38,7 @@ class App extends React.Component {
           <Switch>
             <LayoutRoute
               exact
-              path="/login"
+              path="/"
               layout={EmptyLayout}
               component={props => (
                 <AuthPage {...props} authState={STATE_LOGIN} />
@@ -53,21 +54,18 @@ class App extends React.Component {
             />
 
             <MainLayout breakpoint={this.props.breakpoint}>
-              <React.Suspense fallback={<PageSpinner/>}>
-                <Route exact path="/" component={DashboardPage} />
+              <React.Suspense fallback={<PageSpinner />}>
+                <Route exact path="/dashboard" component={DashboardPage} />
                 <Route exact path="/login-modal" component={AuthModalPage} />
                 <Route exact path="/buttons" component={ButtonPage} />
+                <Route exact path="/users" component={UserPage} />
                 <Route exact path="/cards" component={CardPage} />
                 <Route exact path="/widgets" component={WidgetPage} />
                 <Route exact path="/typography" component={TypographyPage} />
                 <Route exact path="/alerts" component={AlertPage} />
                 <Route exact path="/tables" component={TablePage} />
                 <Route exact path="/badges" component={BadgePage} />
-                <Route
-                  exact
-                  path="/button-groups"
-                  component={ButtonGroupPage}
-                />
+                <Route exact path="/button-groups" component={ButtonGroupPage} />
                 <Route exact path="/dropdowns" component={DropdownPage} />
                 <Route exact path="/progress" component={ProgressPage} />
                 <Route exact path="/modals" component={ModalPage} />

@@ -4,6 +4,15 @@ import React from 'react';
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 
 class AuthForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: '',
+      name: '',
+    }
+  }
+
   get isLogin() {
     return this.props.authState === STATE_LOGIN;
   }
@@ -20,8 +29,24 @@ class AuthForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    console.log('Form submitted');
   };
 
+  onNameChange = (event) => {
+    console.log(event.target.value);
+    this.setState({ name: event.target.value })
+  }
+
+  onEmailChange = (event) => {
+    console.log(event.target.value)
+    this.setState({ email: event.target.value })
+  }
+
+  onPasswordChange = (event) => {
+    console.log(event.target.value)
+    this.setState({ password: event.target.value })
+  }
+  
   renderButtonText() {
     const { buttonText } = this.props;
 
@@ -64,16 +89,16 @@ class AuthForm extends React.Component {
         )}
         <FormGroup>
           <Label for={usernameLabel}>{usernameLabel}</Label>
-          <Input {...usernameInputProps} />
+          <Input {...usernameInputProps} onChange={this.onEmailChange} />
         </FormGroup>
         <FormGroup>
           <Label for={passwordLabel}>{passwordLabel}</Label>
-          <Input {...passwordInputProps} />
+          <Input {...passwordInputProps} onChange={this.onPasswordChange} />
         </FormGroup>
         {this.isSignup && (
           <FormGroup>
             <Label for={confirmPasswordLabel}>{confirmPasswordLabel}</Label>
-            <Input {...confirmPasswordInputProps} />
+            <Input {...confirmPasswordInputProps} onChange={this.onPasswordChange} />
           </FormGroup>
         )}
         <FormGroup check>
@@ -115,7 +140,7 @@ class AuthForm extends React.Component {
 export const STATE_LOGIN = 'LOGIN';
 export const STATE_SIGNUP = 'SIGNUP';
 
-AuthForm.propType= {
+AuthForm.propType = {
   authState: PropType.oneOf([STATE_LOGIN, STATE_SIGNUP]).isRequired,
   showLogo: PropType.bool,
   usernameLabel: PropType.string,
@@ -145,7 +170,7 @@ AuthForm.defaultProps = {
     type: 'password',
     placeholder: 'confirm your password',
   },
-  onLogoClick: () => {},
+  onLogoClick: () => { },
 };
 
 export default AuthForm;

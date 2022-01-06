@@ -43,6 +43,12 @@ const sidebarBackground = {
   backgroundRepeat: 'no-repeat',
 };
 
+
+const userComponents = [
+  { to: '/users', name: 'Users', exact: false, Icon: MdAccountCircle },
+];
+
+
 const navComponents = [
   { to: '/buttons', name: 'buttons', exact: false, Icon: MdRadioButtonChecked },
   {
@@ -91,6 +97,7 @@ const bem = bn.create('sidebar');
 
 class Sidebar extends React.Component {
   state = {
+    isOpenUsers:true,
     isOpenComponents: true,
     isOpenContents: true,
     isOpenPages: true,
@@ -121,7 +128,7 @@ class Sidebar extends React.Component {
                 alt=""
               />
               <span className="text-white">
-                Reduction <FaGithub />
+                GoSoftTech <FaGithub />
               </span>
             </SourceLink>
           </Navbar>
@@ -141,6 +148,46 @@ class Sidebar extends React.Component {
                 </BSNavLink>
               </NavItem>
             ))}
+
+
+            <NavItem
+              className={bem.e('nav-item')}
+              onClick={this.handleClick('Users')}
+            >
+              <BSNavLink className={bem.e('nav-item-collapse')}>
+                <div className="d-flex">
+                  <MdAccountCircle className={bem.e('nav-item-icon')} />
+                  <span className=" align-self-start">Users Manager</span>
+                </div>
+                <MdKeyboardArrowDown
+                  className={bem.e('nav-item-icon')}
+                  style={{
+                    padding: 0,
+                    transform: this.state.isOpenUsers
+                      ? 'rotate(0deg)'
+                      : 'rotate(-90deg)',
+                    transitionDuration: '0.3s',
+                    transitionProperty: 'transform',
+                  }}
+                />
+              </BSNavLink>
+            </NavItem>
+            <Collapse isOpen={this.state.isOpenUsers}>
+              {userComponents.map(({ to, name, exact, Icon }, index) => (
+                <NavItem key={index} className={bem.e('nav-item')}>
+                  <BSNavLink
+                    id={`navItem-${name}-${index}`}
+                    tag={NavLink}
+                    to={to}
+                    activeClassName="active"
+                    exact={exact}
+                  >
+                    <Icon className={bem.e('nav-item-icon')} />
+                    <span className="">{name}</span>
+                  </BSNavLink>
+                </NavItem>
+              ))}
+            </Collapse>
 
             <NavItem
               className={bem.e('nav-item')}
